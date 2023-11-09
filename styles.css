@@ -1,0 +1,30 @@
+#compass {
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.circle {
+    width: 200px;
+    height: 200px;
+    background-color: transparent;
+    border: 2px solid #000;
+    border-radius: 50%;
+    position: relative;
+}
+
+.direction {
+    position: absolute;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.N { top: 0; left: 95px; }
+.E { top: 95px; left: 190px; }
+.S { bottom: 0; left: 95px; }
+.W { top: 95px; left: 0; }
+
+#heading {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 10px;
+}
