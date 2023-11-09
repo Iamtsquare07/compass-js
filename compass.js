@@ -31,7 +31,7 @@ function updateCompass(heading) {
 
 // Function to get the cardinal direction based on the heading
 function getCardinalDirection(heading) {
-    var directions = ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW', 'EW', 'NE', 'SE', 'SW'];
+    var directions = ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW', 'EW', 'ENE', 'ESE', 'WSW'];
     var index = Math.round(heading / 45) % 12;
     return directions[index];
 }
