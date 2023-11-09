@@ -10,6 +10,8 @@
     border: 2px solid #000;
     border-radius: 50%;
     position: relative;
+    transform-origin: center;
+    margin: 20px auto;
 }
 
 .direction {
@@ -18,12 +20,27 @@
     font-weight: bold;
 }
 
-.N { top: 0; left: 95px; }
-.E { top: 95px; left: 190px; }
-.S { bottom: 0; left: 95px; }
-.W { top: 95px; left: 0; }
+.N { top: 5px; left: 95px; }
+.E { top: 95px; right: 5px; }
+.S { bottom: 5px; left: 95px; }
+.W { top: 95px; left: 5px; }
 
-#heading {
+.line {
+    position: absolute;
+    width: 2px;
+    height: 70%;
+    margin-top: 15%;
+    background-color: #000;
+    top: 0;
+    left: 50%;
+    transform-origin: 50%;
+}
+
+.NS { transform: rotate(0deg); }
+.WE { transform: rotate(90deg); }
+
+
+.heading {
     font-size: 24px;
     font-weight: bold;
     margin-top: 10px;
