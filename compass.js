@@ -7,12 +7,18 @@ function handleOrientation(event) {
   } else if (event.webkitCompassHeading) {
     // IOS Devices
     updateCompass(event.webkitCompassHeading);
-  } else if (!event.webkitCompassHeading && !event.alpha) {
-    setTimeout(() => {
-      alert(
-        "It seems like your device does not have the sensors needed to run this application. Sorry for the inconvenience."
-      );
-    }, 3000);
+  } else if (
+    event &&
+    typeof event.webkitCompassHeading !== "undefined" &&
+    event.webkitCompassHeading !== null &&
+    typeof event.alpha !== "undefined" &&
+    event.alpha !== null &&
+    event.alpha >= 0 &&
+    event.alpha <= 360
+  ) {
+    alert(
+      "It seems like your device does not have the sensors needed to run this application. Sorry for the inconvenience."
+    );
   }
 }
 
@@ -37,7 +43,7 @@ function updateCompass(heading) {
 
 // Get the cardinal direction
 function getCardinalDirection(heading) {
-  var directions = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"];
+  var directions = ["N", "NE", "E", "SE", "S", "SW", "W", "NW", "NW", "ENE"];
   var index = Math.round(heading / 45) % 12;
   return directions[index];
 }
