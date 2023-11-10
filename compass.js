@@ -1,16 +1,18 @@
 window.addEventListener("deviceorientation", handleOrientation);
 
 function handleOrientation(event) {
-  if (event.webkitCompassHeading) {
-    // IOS Devices
-    updateCompass(event.webkitCompassHeading);
-  } else if (event.alpha) {
+  if (event.alpha) {
     // Android devices
     updateCompass(event.alpha);
-  } else {
-    alert(
-      "It seems like your device does not have the sensors needed to run this application. Sorry for the inconvenience."
-    );
+  } else if (event.webkitCompassHeading) {
+    // IOS Devices
+    updateCompass(event.webkitCompassHeading);
+  } else if (!event.webkitCompassHeading && !event.alpha) {
+    setTimeout(() => {
+      alert(
+        "It seems like your device does not have the sensors needed to run this application. Sorry for the inconvenience."
+      );
+    }, 3000);
   }
 }
 
@@ -35,20 +37,7 @@ function updateCompass(heading) {
 
 // Get the cardinal direction
 function getCardinalDirection(heading) {
-  var directions = [
-    "N",
-    "NE",
-    "E",
-    "SE",
-    "S",
-    "SW",
-    "W",
-    "NW",
-    "EW",
-    "ENE",
-    "ESE",
-    "WSW",
-  ];
+  var directions = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"];
   var index = Math.round(heading / 45) % 12;
   return directions[index];
 }
