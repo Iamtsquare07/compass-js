@@ -1,6 +1,39 @@
-#compass {
+@import url('https://fonts.googleapis.com/css2?family=Croissant+One&display=swap');
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #000014;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+h1 {
     text-align: center;
-    font-family: Arial, sans-serif;
+    margin-bottom: 20px;
+    color: rgba(255, 217, 0, 0.61);
+    font-family: 'Croissant One', cursive;
+    font-size: 5vw;
+}
+
+h2 {
+    color: rgba(255, 217, 0, 0.61);
+}
+
+#compass {
+    margin: auto;
+    width: 90%;
+    margin-top: 30px;
+    background-color: #00006e;
+    padding: 20px 20px 50px 30px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px 1px #1b37b4;
+    color: #cecff8;
+    overflow-y: auto;
+    text-align: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 .circle {
@@ -12,6 +45,7 @@
     position: relative;
     transform-origin: center;
     margin: 20px auto;
+    
 }
 
 .direction {
@@ -20,28 +54,82 @@
     font-weight: bold;
 }
 
-.N { top: 5px; left: 95px; }
-.E { top: 95px; right: 5px; }
-.S { bottom: 5px; left: 95px; }
-.W { top: 95px; left: 5px; }
+.N {
+    top: 5px;
+    left: 95px;
+}
 
-.line {
-    position: absolute;
+.E {
+    top: 95px;
+    right: 5px;
+}
+
+.S {
+    bottom: 5px;
+    left: 95px;
+}
+
+.W {
+    top: 95px;
+    left: 5px;
+}
+
+.direction-line {
+    position: fixed;
+    margin-top: 21%;
+    height: 33%;
+    margin-left: 11px;
     width: 2px;
-    height: 70%;
-    margin-top: 15%;
-    background-color: #000;
+    background-color: #bb1616;
     top: 0;
     left: 50%;
     transform-origin: 50%;
 }
 
-.NS { transform: rotate(0deg); }
-.WE { transform: rotate(90deg); }
+.line {
+    position: absolute;
+    width: 2px;
+    height: 70%;
+    margin-top: 17%;
+    background-color: #bb1616;
+    top: 0;
+    left: 50%;
+    transform-origin: 50%;
+}
 
+.NS {
+    transform: rotate(0deg);
+}
+
+.WE {
+    transform: rotate(90deg);
+}
 
 .heading {
-    font-size: 24px;
+    font-size: 18px;
     font-weight: bold;
     margin-top: 10px;
+    margin-top: 50px;
+}
+
+.position-container {
+    font-size: 24px;
+}
+
+@media only screen and (min-width: 1024px) {
+    h1 {
+        font-size: 30px;
+    }
+
+    #compass {
+        min-width: 500px;
+        width: 40%;
+        height: 400px;
+    }
+
+    .direction-line {
+        margin-top: 8%;
+        height: 37%;
+        margin-left: 5px;
+    }
 }
