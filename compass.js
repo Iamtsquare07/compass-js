@@ -9,7 +9,7 @@ function handleOrientation(event) {
     updateCompass(event.alpha);
   } else {
     alert(
-      "It seems like your device does not have the sensors needed to run this application. Sorry for the inconvenience"
+      "It seems like your device does not have the sensors needed to run this application. Sorry for the inconvenience."
     );
   }
 }
@@ -30,11 +30,10 @@ function updateCompass(heading) {
   // Calculate the cardinal direction
   var cardinalDirection = getCardinalDirection(degrees);
 
-  // Update the position field
   positionElement.textContent = cardinalDirection;
 }
 
-// Function to get the cardinal direction
+// Get the cardinal direction
 function getCardinalDirection(heading) {
   var directions = [
     "N",
