@@ -16,20 +16,20 @@ function updateCompass(heading) {
     // Convert the heading to degrees
     var degrees = Math.round(heading);
 
-    // Update the displayed heading
     headingElement.textContent = degrees;
 
+    // Rotate the compass circle to match the heading
+    compassElement.style.transform = 'rotate(' + degrees + 'deg)';
+    
     // Calculate the cardinal direction
     var cardinalDirection = getCardinalDirection(degrees);
 
     // Update the position field
     positionElement.textContent = cardinalDirection;
-
-    // Rotate the compass circle to match the heading
-    compassElement.style.transform = 'rotate(' + degrees + 'deg)';
 }
 
-// Function to get the cardinal direction based on the heading
+
+// Function to get the cardinal direction
 function getCardinalDirection(heading) {
     var directions = ['N', 'NE', 'E', 'SE', 'S', 'SW', 'W', 'NW', 'EW', 'ENE', 'ESE', 'WSW'];
     var index = Math.round(heading / 45) % 12;
