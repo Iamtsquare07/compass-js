@@ -1,26 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles.css">
     <title>Compass JS</title>
 </head>
+
 <body>
     <h1>Compass JS</h1>
     <div id="compass">
+        <div class="direction-line"></div>
         <div class="circle">
-            <div class="line NS"></div>
-            <div class="line WE"></div>
+            <div class="lines-container">
+                <div class="line NS"></div>
+                <div class="line WE"></div>
+            </div>
             <div class="direction N">N</div>
             <div class="direction E">E</div>
             <div class="direction S">S</div>
             <div class="direction W">W</div>
         </div>
         <div class="heading">
-            <p>Heading: <span id="heading">0</span> <span id="position"></span></p>
+            <p>You're heading:
+            <div class="position-container"><span id="heading">0</span>° <span id="position"></span></div>
+            </p>
         </div>
     </div>
-<script src="./compass.js"></script>
+    <script src="./compass.js"></script>
 </body>
+
 </html>
